@@ -61,7 +61,7 @@ object ItemsGui extends App:
       PosWithItems(Random.nextInt(w),Random.nextInt(h), Set()))
     val showMatrix = model.show(matrix(model.width, model.height, items))
     println(showMatrix(s => q1.bestPolicy(s).toString))
-    createGui(model, 40)(borderGrid
+    createGui(model, 40)(noBorderGrid
       //.showStartPos((0,0))
       .showItems(model.items.values.toSet,model.releasePos)
       .showObstacles(model.obstacles)

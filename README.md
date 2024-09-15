@@ -204,7 +204,7 @@ This **app** Monad is then passed to the loop function.
 Using this approach will cause the program to process all the events accumulated in the event stream, in the same **loop cycle**. 
 
 <p align="center">
-<img src="report/diagram2.png" alt="Class diagram of a Matrix field" width="600"/>
+<img src="report/diagram2.png" alt="Event loop diagram" width="600"/>
 </p>
 
  After handling all the events, the app State Monad returns true. This value will then be evaluated in the _loop_ state monad seen earlier, which will **recursively** call the _app_ monad, which will consequently handle new events and produce a new boolean value. Since we passed true, this flatMap chain calls will cause an **infinite** loop. For simplicity, the events were modelled as strings.
@@ -251,3 +251,15 @@ It is important to note that, passing the history as a **LazyList**, allows the 
 There are two ways to create the **History** on which we want to run the app:
 - `def learningHist(q: Q)(episodes: Int, length: Int)`: this function allows to visualize the history of the **training** phase.
 - `def nRuns(q: Q)(episodes: Int, length: Int)(g: () => State)`: this function perform a number of episodes with the given Q-Table, without updating it. The _g_ function is used to generate the initial State for each episode.
+
+<p align="center">
+<img src="report/image1.png" alt="App image" width="500"/>
+</p>
+
+Once we run the app, we can interact with the steps of the episodes, using the **next** and **prev** buttons.
+We can also use the **autoplay** button to automatically visualize the episodes.
+We can also visualize the current **State** of the robot, the current **Episode**, the **Episode length** and 
+the **best action** that the robot should perform in the current state, considering the current  Q-Table.
+
+
+
