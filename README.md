@@ -257,7 +257,7 @@ There are two ways to create the **History** on which we want to run the app:
 </p>
 
 Once we run the app, we can interact with the steps of the episodes, using the **next** and **prev** buttons.
-We can also use the **autoplay** button to automatically visualize the episodes.
+We can use the **autoplay** button to automatically visualize the episodes.
 We can also visualize the current **State** of the robot, the current **Episode**, the **Episode length** and 
 the **best action** that the robot should perform in the current state, considering the current  Q-Table.
 
