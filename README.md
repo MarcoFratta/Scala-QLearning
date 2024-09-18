@@ -58,7 +58,7 @@ The list of the available extensions are:
 <img src="report/diagram.png" alt="Class diagram of a Matrix field" width="900"/>
 </p>
 
-In this diagram, we can see a simple Field implementation, that represents a Matrix field with a width and a height. Using this model we can use the Scala Algebraic Data Types [**ADT**](https://docs.scala-lang.org/scala3/book/types-adts-gadts.html) to specify the set of actions that can be performed. The basic set actions that the robot can perform in a matrix field is defined by the **Move** type:
+In this diagram, we can see a simple Field implementation, that represents a Matrix field with a width and a height. Using this model we can use the Scala Algebraic Data Types [**ADT**](https://docs.scala-lang.org/scala3/book/types-adts-gadts.html) to specify the set of actions that can be performed. The basic actions set that the robot can perform in a matrix field is defined by the **Move** type:
 
 ```
 enum Move:
@@ -97,7 +97,7 @@ Using this new state, the robot can now access also the set of items it collects
     case (s, a) => default reward function
 ```
 
-In this pseudocode we can see the **reward function** of the items mixin. This reward logic is enough to allow the robot to learn how to pick up the items in the environment and then release them in a release position. For example, we can assign the maximum negative reward if the robot tries to move towards a release position without having all the items collected. In this way the robot will learn that he can move to a release position only when it has collected all the items.
+In this pseudocode we can see the **reward function** of the items mixin. This reward logic is enough to allow the robot to learn how to pick up the items in the environment and then release them in a release position. For example, we can assign the maximum negative reward if the robot tries to move towards a release position without having all the items collected. In this way the robot will learn that it can move to a release position only when it has collected all the items.
 
 ## Usage
 
